@@ -1,0 +1,175 @@
+body {
+    background-image: url("/assets/img/macos-mojave-macbook-pro-apple-computer-wallpaper-preview.jpg"); 
+    
+    /*/assets/img/dark-anime-scenery-vlkz1gknsnxzrfne.jpg*/
+
+    /*https://cdn.theanimegallery.com/theanimegallery/9ffdc1fb-b605-4304-a3ee-3d95af1c74c0-anime-background-wallpaper.webp*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+.flex {
+    display: flex;
+}
+header {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+header div {
+    margin: 10px;
+}
+
+header input[type=radio] {
+    display:none;
+}
+
+.indicator {
+    position: absolute;
+    top: 30px;
+    left: 782px;
+    background-color: #002aff;
+    height: 2px;
+    width: 37px;
+    transition: all 0.2s ease;
+}
+
+#home:checked ~ .bar .indicator {
+    left: 782px;
+}
+#contact:checked ~ .bar .indicator {
+    left: 850px;
+    width: 45px;
+}
+#project:checked ~ .bar .indicator {
+    left: 925px;
+    width: 50px;
+}
+
+.glass {
+    background-color: rgba(151, 151, 151, 0.342);
+    padding: 20px 25px;
+    margin: 50px;
+    height: 400px;
+    border-radius: 20px;
+}
+a {
+    color: #a9a9a9;
+}
+.glass .home,
+.glass .contact,
+.glass .project {
+    flex-direction: column;
+    align-items: center;
+}
+.pic>img {
+    height: 100px;
+    border-radius: 50px;
+}
+.name {
+    background: linear-gradient(90deg, rgb(0, 217, 255), rgb(255, 204, 1));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(14);
+}
+@keyframes typing {
+    0% {
+        width: 0ch;
+    }
+    100% {
+        width: 14ch;
+    }
+}
+.glass .text {
+    display: none;
+}
+
+.glass .home {
+    display: flex;
+}
+
+#home:checked ~ .glass .home,
+#contact:checked ~ .glass .contact,
+#project:checked ~ .glass .project {
+    display: flex;
+}
+
+#contact:checked ~ .glass .home,
+#project:checked ~ .glass .home {
+    display: none;
+}
+
+.insta, .twitter, .git {
+    font-size: 18px;
+    padding: 5px 50px;
+    border-radius: 10px;
+}
+.insta {
+    background-color: rgb(249, 162, 121);
+    color: #ff0000;
+}
+.twitter {
+    background-color: rgb(212, 222, 24);
+    color: #009cfd;
+}
+.git {
+    background-color: rgb(72, 204, 249);
+    color: #000000;
+}
+.insta:hover, .twitter:hover, .git:hover {
+    scale: 1.1;
+}
+.menu {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+}
+.sidebar {
+    background-color: #ffffff24;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: -150px;
+    padding: 25px 15px;
+    transition: all 0.2s ease;
+}
+.item {
+    margin-top: 10px;
+    margin-right: 30px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(186, 186, 186);
+}
+#bar {
+    display: none;
+}
+#bar:checked ~ .sidebar {
+    left: 0px;
+}
+
+@media screen and (min-width:1400px) {
+    .sidebar {
+        left: 0;
+    }
+}
+@media screen and (max-width:1000px) {
+    .indicator {
+        display: none;
+    }
+    .glass {
+        height: auto;
+    }
+}
+@media screen and (max-width:500px) {
+    .menu {
+        display: none;
+    }
+    .bar {
+        flex-direction: column;
+    }
+}
